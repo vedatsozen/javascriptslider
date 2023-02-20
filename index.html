@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEW YORK TIMES API</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+    
+<div id="myData">
+    <div id="slider"></div>
+</div>
+
+
+    <img id="previous" class="left arrow" src="images/leftarrow.png">
+    <img id="next" class="right arrow" src="images/rightarrow.png">
+   
+</body>
+
+<script>
+
+fetch('resimler.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+
+        function appendData(data) {
+
+            var mainContainer = document.getElementById("slider");
+
+            for (var i = 0; i < data.length; i++) {
+
+                var div = document.createElement("div");
+                div.classList.add("anydiv");
+                mainContainer.appendChild(div);
+
+                var image = document.createElement("img");
+                image.classList.add("myimg");
+                div.appendChild(image);
+
+                image.src = "images/"+data[i].imgurl;
+          
+      
+                
+
+            
+            }
+        }
+
+let p = - 1000 ;
+let r = - 1000 ;
+
+
+$(document).ready(function() {
+
+
+
+     $("#next").click(function() {
+        $("#slider").animate({left:p+"px"},1500)
+        p = p - 1000 ;
+        if ( p < - 9000 ) {
+            $("#slider").animate({left:"0px"},3500)
+
+            p = - 1000 ;
+        }
+    })
+
+
+
+     })
+
+
+
+
+
+</script>
+
+</html>

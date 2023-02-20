@@ -1,0 +1,74 @@
+body {
+    text-align: center;
+
+}
+
+#myData {
+
+    height:500px;
+    width:1000px;
+    border: 3px solid black;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#slider {
+   
+
+    height:500px;
+    width:10000px;
+    display: flex;
+    flex-direction: row;
+    position:absolute;
+    left: 0px;
+}
+
+
+div.anydiv {
+
+    color: white;
+    height:500px;
+    width:1000px;
+}
+
+.myimg {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
+button {
+    cursor: pointer;
+    padding:8px 10px;
+    border-radius: 4px;
+    border: none;
+
+}
+
+img.right {
+    position: absolute;
+    top: 50%;
+    right:70px;
+    cursor: pointer;
+}
+
+img.left {
+    position: absolute;
+    top: 50%;
+    left:70px;
+    cursor: pointer;
+ 
+}
+
+img.arrow:hover {
+    filter: drop-shadow(0 0 10px black);
+}
+
+img.arrow:active {
+    transform: scale(0.9);
+}
+
